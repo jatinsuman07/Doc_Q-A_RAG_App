@@ -10,13 +10,22 @@ from langchain_community.vectorstores import FAISS    # vector Store
 from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
-groq_api_key = st.secrets["GROQ_API_KEY"]
-google_api_key = st.secrets["GOOGLE_API_KEY"]
+# groq_api_key = st.secrets["GROQ_API_KEY"]
+# google_api_key = st.secrets["GOOGLE_API_KEY"]
+
+# # load the GROQ and google API key from .env file
+
+# groq_api_key = os.getenv(groq_api_key)
+# os.environ['GOOGLE_API_KEY']=google_api_key
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # load the GROQ and google API key from .env file
 
-groq_api_key = os.getenv(groq_api_key)
-os.environ['GOOGLE_API_KEY']=google_api_key
+groq_api_key = os.getenv("GROQ_API_KEY")
+os.environ['GOOGLE_API_KEY']=os.getenv("GOOGLE_API_KEY")
 
 st.title("Q&A using Gemma")
 
