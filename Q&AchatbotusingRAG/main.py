@@ -52,8 +52,6 @@ prompt1=st.text_input("What you want to ask from Notes?")
 if st.button("Create Document Embeddings"):
     vector_embedding()
     st.write("Vector Store Database is Ready")
-    num_vectors = st.session_state.vectors.index.ntotal
-    st.write(f"Number of vectors in FAISS: {num_vectors}")
 
 
 if prompt1:
